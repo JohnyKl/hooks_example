@@ -36,12 +36,7 @@ void printAdapterInfo() {
     PIP_ADAPTER_INFO pAdapter = NULL;
     DWORD dwRetVal = 0;
     UINT i;
-
-    /* variables used to print DHCP time info */
-    struct tm newtime;
-    char buffer[32];
-    errno_t error;
-
+    
     ULONG ulOutBufLen = sizeof(IP_ADAPTER_INFO);
     pAdapterInfo = (IP_ADAPTER_INFO *)MALLOC(sizeof(IP_ADAPTER_INFO));
     if (pAdapterInfo == NULL) {

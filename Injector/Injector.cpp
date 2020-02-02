@@ -16,7 +16,7 @@ int main()
     std::wstring targetPath = std::wstring(selfdir) + TEXT("\\target.exe");
 
     if (InjectDll(dllPath.c_str(), targetPath.c_str())) {
-        printf("Dll was successfully injected.");
+        printf("Dll was successfully injected.\n");
     }
     else {
         printf("Terminating the Injector app...");
@@ -30,8 +30,7 @@ int main()
 
 BOOL WINAPI InjectDll(__in LPCWSTR lpcwszDll, __in LPCWSTR targetPath)
 {
-    INT nLength;
-    DWORD dwTemp;
+    SIZE_T nLength;
     LPVOID lpLoadLibraryW = NULL;
     LPVOID lpRemoteString;
     STARTUPINFO             startupInfo;
