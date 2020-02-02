@@ -105,8 +105,13 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>NtHookEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>external_libs/NtHookEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>copy /Y "$(ProjectDir)external_libs\NtHookEngine.dll" "$(TargetDir)NtHookEngine.dll" 
+copy /Y "$(ProjectDir)external_libs\NtHookEngine.lib" "$(TargetDir)NtHookEngine.lib"
+copy /Y "$(ProjectDir)external_libs\NtHookEngine.exp" "$(TargetDir)NtHookEngine.exp"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -169,11 +174,11 @@
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="NtHookEngine.dll" />
-    <None Include="NtHookEngine.exp" />
+    <None Include="external_libs\NtHookEngine.dll" />
+    <None Include="external_libs\NtHookEngine.exp" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="NtHookEngine.lib" />
+    <Library Include="external_libs\NtHookEngine.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

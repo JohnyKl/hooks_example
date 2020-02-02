@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="external_libs">
+      <UniqueIdentifier>{b78b9d76-1818-4eec-a310-acc1377b628d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -40,10 +43,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NtHookEngine.dll" />
-    <None Include="NtHookEngine.exp" />
+    <None Include="external_libs\NtHookEngine.dll">
+      <Filter>external_libs</Filter>
+    </None>
+    <None Include="external_libs\NtHookEngine.exp">
+      <Filter>external_libs</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="NtHookEngine.lib" />
+    <Library Include="external_libs\NtHookEngine.lib">
+      <Filter>external_libs</Filter>
+    </Library>
   </ItemGroup>
 </Project>
